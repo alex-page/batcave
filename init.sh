@@ -1,10 +1,10 @@
 #!/bin/sh
 
-# Install git python-pip and python-dev
-sudo apt-get install -y git python-pip python-dev
+# Install build-essential git python-pip and python-dev
+sudo apt-get install -y build-essential git python-pip python-dev
 
 # Install ansible with pip
-sudo pip install ansible
+sudo -H pip install ansible
 
 # Clone the repositry and go into the file
 git clone https://github.com/alex-page/batcave.git
