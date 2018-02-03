@@ -7,7 +7,7 @@ sudo apt-get install -y git python-pip python-dev
 sudo pip install ansible
 
 # Clone the repositry and go into the file
-git clone https://github.com/alexpage/batcave.git
+git clone https://github.com/alex-page/batcave.git
 cd batcave
 
 # Run the ansible playbook
