@@ -20,6 +20,7 @@
     - shotwell*
     - thunderbird
     - transmission-gtk
+    - ubuntu-amazon-default
     - ubuntu-web-launchers
     - unity-lens-shopping
     - unity-scope-gdrive
@@ -38,8 +39,16 @@
     - vino-preferences
     - yelp
 
+- name: Remove unecessary files and directories
+  file:
+    path: "{{ item }}"
+    state: absent
+  with_items:
+    - ~/Examples
+    - /usr/share/example-content
 
-- name: Remove amazon shortcut
+
+- name: Remove amazon shortcut from launch bar
   file: path=/usr/share/applications/ubuntu-amazon-default.desktop force=yes state=absent
 
 
