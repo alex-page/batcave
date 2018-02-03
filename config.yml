@@ -1,5 +1,6 @@
 ---
 - hosts: all
   roles:
-    # Common roles
-    - { role: desktop-cleanup, become: true }
+    - desktop-cleanup
+    - geerlingguy.nodejs
+    - gantsign.visual-studio-code

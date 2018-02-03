@@ -1,6 +1,6 @@
 ---
 
-- name: Remove unecessary applications
+- name: Removing applications
   apt: pkg={{ item }} purge=yes state=absent
   with_items:
     - aisleriot
@@ -39,20 +39,12 @@
     - vino-preferences
     - yelp
 
-- name: Remove unecessary directories
-  file:
-    path: "{{ item }}"
-    state: directory
-  with_items:
-    - ~/Examples
-    - /usr/share/example-content
 
-
-- name: Remove amazon shortcut from launch bar
+- name: Removing amazon shortcut from launch bar
   file: path=/usr/share/applications/ubuntu-amazon-default.desktop force=yes state=absent
 
 
-- name: Disable unity integrations
+- name: Disabling unity integrations
   command: "{{ item }}"
   become: true
   become_user: "{{ ansible_env.USER }}"
@@ -60,7 +52,7 @@
     - gsettings set com.canonical.Unity.Lenses disabled-scopes "['more_suggestions-amazon.scope', 'more_suggestions-u1ms.scope', 'more_suggestions-populartracks.scope', 'music-musicstore.scope', 'more_suggestions-ebay.scope', 'more_suggestions-ubuntushop.scope', 'more_suggestions-skimlinks.scope']"
 
 
-- name: Remove user directories ( XDG )
+- name: Removing user directories ( XDG )
   file: path="{{ ansible_env.HOME }}/{{ item }}" force=yes state=absent
   with_items:
     - Pictures
@@ -70,7 +62,7 @@
     - Templates
 
 
-- name : Run xdg-user-dirs-update
+- name : Running xdg-user-dirs-update
   shell: xdg-user-dirs-update
   become: true
   become_user: "{{ ansible_env.USER }}"
