@@ -1,5 +1,6 @@
 ---
-- hosts: all
+- name: Batcave development environment
+  hosts: localhost
   roles:
     - { role: desktop-cleanup, become: true }
     # https://github.com/geerlingguy/ansible-role-nodejs
