@@ -6,7 +6,7 @@
     - mediascanner2.0
     - libmediascanner-2.0-0
 
-- name: Remove unecessary unity plugins
+- name: Remove unecessary applications
   apt: pkg={{ item }} purge=yes state=absent
   with_items:
     - unity-lens-shopping
@@ -22,22 +22,35 @@
     - unity-scope-launchpad
     - unity-scope-onlinemusic
     - unity-scope-yahoostock
+    - aisleriot
+    - gnome-mahjongg
+    - gnome-mines
+    - gnone-sudoku
+    - cheese
+    - help
+    - libreoffice*
+    - rhythmbox*
+    - libwacom*
+    - xserver-xorg-input-wacom
 
-- name: Remove amazon shortcut
-  file: path=/usr/share/applications/ubuntu-amazon-default.desktop force=yes state=absent
+- name: Remove desktop shortcut
+  command: "{{ item }}"
+  with_items:
+    - file: path=/usr/share/applications/ubuntu-amazon-default.desktop force=yes state=absent
+    - file: path=/usr/share/applications/help.desktop force=yes state=absent
+    - file: path=/usr/share/applications/rhythmbox.desktop force=yes state=absent
+    - file: path="{{ ansible_env.HOME }}/examples.desktop" force=yes state=absent
+
+- name: Remove examples shortcut
+  file: path="{{ ansible_env.HOME }}/examples.desktop" force=yes state=absent
 
 - name: Disable unity integrations
   command: "{{ item }}"
   become: true
   become_user: "{{ ansible_env.USER }}"
   with_items:
-    - gsettings set com.canonical.Unity.webapps integration-allowed false
+    - apt purge ubuntu-web-launchers
     - gsettings set com.canonical.Unity.Lenses disabled-scopes "['more_suggestions-amazon.scope', 'more_suggestions-u1ms.scope', 'more_suggestions-populartracks.scope', 'music-musicstore.scope', 'more_suggestions-ebay.scope', 'more_suggestions-ubuntushop.scope', 'more_suggestions-skimlinks.scope']"
-    - gsettings set com.canonical.Unity.webapps preauthorized-domains "[]"
-    - gsettings set com.canonical.Unity.ApplicationsLens display-available-apps false
-
-- name: Remove exemples shortcut
-  file: path="{{ ansible_env.HOME }}/examples.desktop" force=yes state=absent
 
 - name: Remove user directories ( XDG )
   file: path="{{ ansible_env.HOME }}/{{ item }}" force=yes state=absent
