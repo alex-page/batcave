@@ -1,10 +1,11 @@
 ---
 - hosts: all
   roles:
-    - desktop-cleanup
+    - role: desktop-cleanup
+      become: true
 
     # https://github.com/geerlingguy/ansible-role-nodejs
-    - nodejs
+    - role: nodejs
 
     # https://github.com/gantsign/ansible-role-visual-studio-code
-    - visual-studio-code
+    - role: visual-studio-code
