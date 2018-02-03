@@ -3,35 +3,36 @@
 - name: Remove unecessary applications
   apt: pkg={{ item }} purge=yes state=absent
   with_items:
-    - mediascanner2.0
-    - libmediascanner-2.0-0
-    - unity-lens-shopping
-    - unity-scope-video-remote
-    - unity-scope-musicstores
-    - unity-scope-gdrive
-    - unity-scope-gmusicbrowser
-    - unity-scope-gourmet
-    - unity-scope-guayadeque
-    - unity-scope-musicstores
-    - unity-scope-musique
-    - unity-scope-googlenews
-    - unity-scope-launchpad
-    - unity-scope-onlinemusic
-    - unity-scope-yahoostock
     - aisleriot
+    - cheese
+    - firefox
     - gnome-mahjongg
     - gnome-mines
     - gnone-sudoku
-    - thunderbird
-    - firefox
-    - shotwell*
-    - remmina
-    - transmission-gtk
-    - cheese
     - help
+    - libmediascanner-2.0-0
     - libreoffice*
-    - rhythmbox*
     - libwacom*
+    - mediascanner2.0
+    - remmina
+    - rhythmbox*
+    - shotwell*
+    - thunderbird
+    - transmission-gtk
+    - ubuntu-web-launchers
+    - unity-lens-shopping
+    - unity-scope-gdrive
+    - unity-scope-gmusicbrowser
+    - unity-scope-googlenews
+    - unity-scope-gourmet
+    - unity-scope-guayadeque
+    - unity-scope-launchpad
+    - unity-scope-musicstores
+    - unity-scope-musicstores
+    - unity-scope-musique
+    - unity-scope-onlinemusic
+    - unity-scope-video-remote
+    - unity-scope-yahoostock
     - xserver-xorg-input-wacom
 
 - name: Remove amazon shortcut
@@ -42,7 +43,6 @@
   become: true
   become_user: "{{ ansible_env.USER }}"
   with_items:
-    - apt purge ubuntu-web-launchers
     - gsettings set com.canonical.Unity.Lenses disabled-scopes "['more_suggestions-amazon.scope', 'more_suggestions-u1ms.scope', 'more_suggestions-populartracks.scope', 'music-musicstore.scope', 'more_suggestions-ebay.scope', 'more_suggestions-ubuntushop.scope', 'more_suggestions-skimlinks.scope']"
 
 - name: Remove user directories ( XDG )
