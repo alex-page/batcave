@@ -8,7 +8,8 @@
     - firefox
     - gnome-mahjongg
     - gnome-mines
-    - gnone-sudoku
+    - gnome-sudoku
+    - gnome-software-editor
     - help
     - libmediascanner-2.0-0
     - libreoffice*
@@ -34,9 +35,13 @@
     - unity-scope-video-remote
     - unity-scope-yahoostock
     - xserver-xorg-input-wacom
+    - vino-preferences
+    - yelp
+
 
 - name: Remove amazon shortcut
   file: path=/usr/share/applications/ubuntu-amazon-default.desktop force=yes state=absent
+
 
 - name: Disable unity integrations
   command: "{{ item }}"
@@ -45,15 +50,16 @@
   with_items:
     - gsettings set com.canonical.Unity.Lenses disabled-scopes "['more_suggestions-amazon.scope', 'more_suggestions-u1ms.scope', 'more_suggestions-populartracks.scope', 'music-musicstore.scope', 'more_suggestions-ebay.scope', 'more_suggestions-ubuntushop.scope', 'more_suggestions-skimlinks.scope']"
 
+
 - name: Remove user directories ( XDG )
   file: path="{{ ansible_env.HOME }}/{{ item }}" force=yes state=absent
   with_items:
-    - Examples
     - Pictures
     - Videos
     - Music
     - Public
     - Templates
+
 
 - name : Run xdg-user-dirs-update
   shell: xdg-user-dirs-update
