@@ -11,4 +11,4 @@ git clone https://github.com/alex-page/batcave.git
 cd batcave
 
 # Run the ansible playbook
-ansible-playbook config.yml --become --become-method=sudo -c local -i "localhost,"
+ansible-playbook config.yml --ask-become-pass

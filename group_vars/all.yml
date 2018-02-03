@@ -1,0 +1,18 @@
+---
+# http://docs.ansible.com/ansible/playbooks_variables.html#variable-precedence-where-should-i-put-a-variable
+aptcachetime: 3600
+locale: "en_AU.UTF-8"
+timezone: "Australia/Sydney"
+desktop_autostart:
+  add:
+    - { name: Terminal , exec: /usr/bin/x-terminal-emulator }
+  remove:
+    - deja-dup-monitor.desktop
+    - onboard-autostart.desktop
+    - orca-autostart.desktop
+    - vino-server.desktop
+ssh:
+  start: true
+  service_enabled: true
+  password_auth: false
+  root_login: false
