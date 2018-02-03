@@ -1,8 +1,0 @@
-[submodule "roles/ansible-role-nodejs"]
-	path = roles/ansible-role-nodejs
-	url = https://github.com/geerlingguy/ansible-role-nodejs.git
-	branch = master
-[submodule "roles/ansible-role-visual-studio-code"]
-	path = roles/ansible-role-visual-studio-code
-	url = https://github.com/gantsign/ansible-role-visual-studio-code.git
-	branch = master
