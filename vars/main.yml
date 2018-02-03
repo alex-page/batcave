@@ -3,3 +3,4 @@
 aptcachetime: 3600
 locale: "en_AU.UTF-8"
 timezone: "Australia/Sydney"
+nodejs_version: "9.x"
