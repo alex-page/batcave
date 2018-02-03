@@ -34,15 +34,13 @@
     - xserver-xorg-input-wacom
 
 - name: Remove desktop shortcut
-  command: "{{ item }}"
+  command:
+    - file: "{{ item }}"
   with_items:
-    - file: path=/usr/share/applications/ubuntu-amazon-default.desktop force=yes state=absent
-    - file: path=/usr/share/applications/help.desktop force=yes state=absent
-    - file: path=/usr/share/applications/rhythmbox.desktop force=yes state=absent
-    - file: path="{{ ansible_env.HOME }}/examples.desktop" force=yes state=absent
-
-- name: Remove examples shortcut
-  file: path="{{ ansible_env.HOME }}/examples.desktop" force=yes state=absent
+    - path=/usr/share/applications/ubuntu-amazon-default.desktop force=yes state=absent
+    - path=/usr/share/applications/help.desktop force=yes state=absent
+    - path=/usr/share/applications/rhythmbox.desktop force=yes state=absent
+    - path="{{ ansible_env.HOME }}/examples.desktop" force=yes state=absent
 
 - name: Disable unity integrations
   command: "{{ item }}"
