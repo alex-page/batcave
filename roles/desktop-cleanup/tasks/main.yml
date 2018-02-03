@@ -1,14 +1,10 @@
 ---
 
-- name: Ensure Unity MediaScanner is removed (useless + cause high CPU peaks)
+- name: Remove unecessary applications
   apt: pkg={{ item }} purge=yes state=absent
   with_items:
     - mediascanner2.0
     - libmediascanner-2.0-0
-
-- name: Remove unecessary applications
-  apt: pkg={{ item }} purge=yes state=absent
-  with_items:
     - unity-lens-shopping
     - unity-scope-video-remote
     - unity-scope-musicstores
@@ -26,6 +22,11 @@
     - gnome-mahjongg
     - gnome-mines
     - gnone-sudoku
+    - thunderbird
+    - firefox
+    - shotwell*
+    - remmina
+    - transmission-gtk
     - cheese
     - help
     - libreoffice*
@@ -33,14 +34,8 @@
     - libwacom*
     - xserver-xorg-input-wacom
 
-- name: Remove desktop shortcut
-  command:
-    - file: "{{ item }}"
-  with_items:
-    - path=/usr/share/applications/ubuntu-amazon-default.desktop force=yes state=absent
-    - path=/usr/share/applications/help.desktop force=yes state=absent
-    - path=/usr/share/applications/rhythmbox.desktop force=yes state=absent
-    - path="{{ ansible_env.HOME }}/examples.desktop" force=yes state=absent
+- name: Remove amazon shortcut
+  file: path=/usr/share/applications/ubuntu-amazon-default.desktop force=yes state=absent
 
 - name: Disable unity integrations
   command: "{{ item }}"
