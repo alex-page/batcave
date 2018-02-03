@@ -2,5 +2,9 @@
 - hosts: all
   roles:
     - desktop-cleanup
-    - geerlingguy.nodejs
-    - gantsign.visual-studio-code
+
+    # https://github.com/geerlingguy/ansible-role-nodejs
+    - nodejs
+
+    # https://github.com/gantsign/ansible-role-visual-studio-code
+    - visual-studio-code

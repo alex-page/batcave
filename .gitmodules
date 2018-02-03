@@ -1,0 +1,6 @@
+[submodule "roles/visual-studio-code"]
+	path = roles/visual-studio-code
+	url = https://alex-page@github.com/gantsign/ansible-role-visual-studio-code.git
+[submodule "roles/nodejs"]
+	path = roles/nodejs
+	url = https://alex-page@github.com/geerlingguy/ansible-role-nodejs.git
