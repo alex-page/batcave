@@ -39,10 +39,10 @@
     - vino-preferences
     - yelp
 
-- name: Remove unecessary files and directories
+- name: Remove unecessary directories
   file:
     path: "{{ item }}"
-    state: absent
+    state: directory
   with_items:
     - ~/Examples
     - /usr/share/example-content
