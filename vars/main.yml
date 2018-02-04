@@ -41,8 +41,7 @@ users:
 
 # github-projects - Packages to git clone and there location
 project_destination: ~/web
-github_username: alex-page
-repositories:
+github_projects:
   - dest: "{{ project_destination }}"
     repo: alex-page/batcave
   - dest: "{{ project_destination }}"
