@@ -1,5 +1,5 @@
 users:
-  - username: alex
+  - username: "{{ ansible_env.USER }}"
     visual_studio_code_extensions:
       - EditorConfig.editorconfig
       - PKief.material-icon-theme

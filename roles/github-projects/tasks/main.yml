@@ -6,4 +6,4 @@
        force=yes
        recursive=no
   with_items:
-    - {{ github_projects }}
+    - "{{ github_projects }}"
