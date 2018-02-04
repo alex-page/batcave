@@ -40,17 +40,17 @@ users:
 
 
 # github-projects - Packages to git clone and there location
-project_destination: ~/web
+project_folder_name: web
 github_projects:
-  - dest: "{{ project_destination }}"
+  - dest: "{{ ansible_env.HOME }}{{ project_folder_name }}/batcave"
     repo: alex-page/batcave
-  - dest: "{{ project_destination }}"
+  - dest: "{{ ansible_env.HOME }}{{ project_folder_name }}/rainbow"
     repo: alex-page/rainbow
-  - dest: "{{ project_destination }}"
+  - dest: "{{ ansible_env.HOME }}{{ project_folder_name }}/alexpage"
     repo: alex-page/alex-page.github.io
-  - dest: "{{ project_destination }}"
+  - dest: "{{ ansible_env.HOME }}{{ project_folder_name }}/a11ycolor"
     repo: alex-page/a11ycolor
-  - dest: "{{ project_destination }}"
+  - dest: "{{ ansible_env.HOME }}{{ project_folder_name }}/black-lion"
     repo: alex-page/black-lion
 
 
