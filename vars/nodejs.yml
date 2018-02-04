@@ -1,4 +1,0 @@
----
-nodejs_version: "9.x"
-#nodejs_npm_global_packages:
-#  - name: browsersync

@@ -1,5 +1,94 @@
 ---
-# http://docs.ansible.com/ansible/playbooks_variables.html#variable-precedence-where-should-i-put-a-variable
+# Core variables
 aptcachetime: 3600
 locale: "en_AU.UTF-8"
 timezone: "Australia/Sydney"
+
+
+# nodejs - Node js version and packages to install globally
+nodejs_version: "9.x"
+#nodejs_npm_global_packages:
+#  - name: browsersync
+
+
+# visual-studio-code - Visual studio code packages and preferences
+users:
+  - username: "{{ ansible_env.USER }}"
+    visual_studio_code_extensions:
+      - EditorConfig.editorconfig
+      - PKief.material-icon-theme
+      - zhuangtongfa.material-theme
+    visual_studio_code_settings: {
+      "window.zoomLevel": 0,
+      "workbench.colorTheme": "One Dark Pro",
+      "editor.fontSize": 16,
+      "editor.tabSize": 2,
+      "editor.rulers": [ 160 ],
+      "editor.renderWhitespace": "all",
+      "editor.insertSpaces": false,
+      "editor.detectIndentation": false,
+      "editor.fontFamily": "Ubuntu Mono",
+      "editor.fontWeight": "300",
+      "files.exclude": {
+        "**/node_modules": true
+      },
+      "emmet.includeLanguages": {
+        "javascript": "javascriptreact"
+      },
+      "workbench.iconTheme": "material-icon-theme"
+    }
+
+
+# github-projects - Packages to git clone and there location
+project_destination: ~/web
+github_username: alex-page
+repositories:
+  - dest: "{{ project_destination }}"
+    repo: alex-page/batcave
+  - dest: "{{ project_destination }}"
+    repo: alex-page/rainbow
+  - dest: "{{ project_destination }}"
+    repo: alex-page/alex-page.github.io
+  - dest: "{{ project_destination }}"
+    repo: alex-page/a11ycolor
+  - dest: "{{ project_destination }}"
+    repo: alex-page/black-lion
+
+
+# desktop-cleanup - Packages to uninstall
+remove_packages:
+  - aisleriot
+  - cheese
+  - firefox
+  - gnome-mahjongg
+  - gnome-mines
+  - gnome-sudoku
+  - gnome-software-editor
+  - help
+  - libmediascanner-2.0-0
+  - libreoffice*
+  - libwacom*
+  - mediascanner2.0
+  - remmina
+  - rhythmbox*
+  - shotwell*
+  - thunderbird
+  - transmission-gtk
+  - ubuntu-amazon-default
+  - ubuntu-web-launchers
+  - unity-lens-shopping
+  - unity-scope-gdrive
+  - unity-scope-gmusicbrowser
+  - unity-scope-googlenews
+  - unity-scope-gourmet
+  - unity-scope-guayadeque
+  - unity-scope-launchpad
+  - unity-scope-musicstores
+  - unity-scope-musicstores
+  - unity-scope-musique
+  - unity-scope-onlinemusic
+  - unity-scope-video-remote
+  - unity-scope-yahoostock
+  - xserver-xorg-input-wacom
+  - vino-preferences
+  - yelp

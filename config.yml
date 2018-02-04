@@ -3,10 +3,6 @@
   hosts: localhost
   vars_files:
     - vars/main.yml
-    - vars/desktop-cleanup.yml
-    - vars/nodejs.yml
-    - vars/visual-studio-code.yml
-    - vars/github-projects.yml
   roles:
     - { role: desktop-cleanup, become: true }
     # https://github.com/geerlingguy/ansible-role-nodejs
