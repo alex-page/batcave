@@ -9,5 +9,5 @@
     - { role: nodejs, become: true }
     # https://github.com/gantsign/ansible-role-visual-studio-code
     - { role: visual-studio-code, become: true }
-    - { role: github-projects, become: true }
+    - { role: github-projects }
 
