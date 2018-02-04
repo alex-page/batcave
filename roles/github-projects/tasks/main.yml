@@ -1,8 +1,8 @@
 ---
+# https://gist.github.com/mblarsen/62d2c0451e69a607a66a
 - name: Cloning repositories from github
-  git: repo=git@github.com:Organisation/{{ item.repo }}.git
+  git: repo=git@github.com:{{ item.repo }}.git
        dest={{ item.dest }}
-       accept_hostkey=yes
        force=yes
        recursive=no
   with_items:

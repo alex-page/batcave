@@ -1,7 +1,14 @@
 ---
 project_destination: ~/web
+github_username: alex-page
 repositories:
   - dest: "{{ project_destination }}"
-    repo: PrimaryRepo
-  - dest: "{{ project_destination }}/app/core"
-    repo: SubmoduleRepo
+    repo: alex-page/batcave
+  - dest: "{{ project_destination }}"
+    repo: alex-page/rainbow
+  - dest: "{{ project_destination }}"
+    repo: alex-page/alex-page.github.io
+  - dest: "{{ project_destination }}"
+    repo: alex-page/a11ycolor
+  - dest: "{{ project_destination }}"
+    repo: alex-page/black-lion
