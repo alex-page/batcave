@@ -1,0 +1,7 @@
+---
+project_destination: ~/web
+repositories:
+  - dest: "{{ project_destination }}"
+    repo: PrimaryRepo
+  - dest: "{{ project_destination }}/app/core"
+    repo: SubmoduleRepo

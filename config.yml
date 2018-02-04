@@ -5,10 +5,12 @@
     - vars/main.yml
     - vars/nodejs.yml
     - vars/visual-studio-code.yml
+    - vars/github-projects.yml
   roles:
     - { role: desktop-cleanup, become: true }
     # https://github.com/geerlingguy/ansible-role-nodejs
     - { role: nodejs, become: true }
     # https://github.com/gantsign/ansible-role-visual-studio-code
     - { role: visual-studio-code, become: true }
+    - { role: github-projects, become: true }
 

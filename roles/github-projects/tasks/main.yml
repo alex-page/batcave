@@ -1,0 +1,9 @@
+---
+- name: Cloning repositories from github
+  git: repo=git@github.com:Organisation/{{ item.repo }}.git
+       dest={{ item.dest }}
+       accept_hostkey=yes
+       force=yes
+       recursive=no
+  with_items:
+    - {{ github_projects }}

@@ -2,42 +2,7 @@
 
 - name: Removing applications
   apt: pkg={{ item }} purge=yes state=absent
-  with_items:
-    - aisleriot
-    - cheese
-    - firefox
-    - gnome-mahjongg
-    - gnome-mines
-    - gnome-sudoku
-    - gnome-software-editor
-    - help
-    - libmediascanner-2.0-0
-    - libreoffice*
-    - libwacom*
-    - mediascanner2.0
-    - remmina
-    - rhythmbox*
-    - shotwell*
-    - thunderbird
-    - transmission-gtk
-    - ubuntu-amazon-default
-    - ubuntu-web-launchers
-    - unity-lens-shopping
-    - unity-scope-gdrive
-    - unity-scope-gmusicbrowser
-    - unity-scope-googlenews
-    - unity-scope-gourmet
-    - unity-scope-guayadeque
-    - unity-scope-launchpad
-    - unity-scope-musicstores
-    - unity-scope-musicstores
-    - unity-scope-musique
-    - unity-scope-onlinemusic
-    - unity-scope-video-remote
-    - unity-scope-yahoostock
-    - xserver-xorg-input-wacom
-    - vino-preferences
-    - yelp
+  with_items: {{ remove_packages }}
 
 
 - name: Removing amazon shortcut from launch bar
