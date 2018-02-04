@@ -1,6 +1,9 @@
 ---
 - name: Batcave development environment
   hosts: localhost
+  vars_files:
+    - vars/main.yml
+    - vars/nodejs.yml
   roles:
     - { role: desktop-cleanup, become: true }
     # https://github.com/geerlingguy/ansible-role-nodejs
