@@ -2,7 +2,8 @@
 
 - name: Removing applications
   apt: pkg={{ item }} purge=yes state=absent
-  with_items: {{ remove_packages }}
+  with_items:
+    - {{ remove_packages }}
 
 
 - name: Removing amazon shortcut from launch bar
