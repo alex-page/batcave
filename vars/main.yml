@@ -40,7 +40,7 @@ users:
 
 
 # github-projects - Packages to git clone and there location
-project_folder_name: web
+project_folder_name: /web
 github_projects:
   - dest: "{{ ansible_env.HOME }}{{ project_folder_name }}/batcave"
     repo: alex-page/batcave
