@@ -1,0 +1,25 @@
+users:
+  - username: alex
+    visual_studio_code_extensions:
+      - EditorConfig.editorconfig
+      - PKief.material-icon-theme
+      - zhuangtongfa.material-theme
+    visual_studio_code_settings: {
+      "window.zoomLevel": 0,
+      "workbench.colorTheme": "One Dark Pro",
+      "editor.fontSize": 16,
+      "editor.tabSize": 2,
+      "editor.rulers": [ 160 ],
+      "editor.renderWhitespace": "all",
+      "editor.insertSpaces": false,
+      "editor.detectIndentation": false,
+      "editor.fontFamily": "SF Mono",
+      "editor.fontWeight": "300",
+      "files.exclude": {
+        "**/node_modules": true
+      },
+      "emmet.includeLanguages": {
+        "javascript": "javascriptreact"
+      },
+      "workbench.iconTheme": "material-icon-theme"
+    }
