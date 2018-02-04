@@ -13,7 +13,7 @@ users:
       "editor.renderWhitespace": "all",
       "editor.insertSpaces": false,
       "editor.detectIndentation": false,
-      "editor.fontFamily": "SF Mono",
+      "editor.fontFamily": "Ubuntu Mono",
       "editor.fontWeight": "300",
       "files.exclude": {
         "**/node_modules": true
