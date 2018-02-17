@@ -1,0 +1,9 @@
+---
+- name: Creating SSH key for current user
+  user:
+    name: "{{ ansible_env.USER }}"
+    generate_ssh_key: yes
+    ssh_key_bits: 4096
+    ssh_key_file: .ssh/id_rsa
+    ssh_key_passphrase: "{{ ssh_passphrase }}"
+    ssh_key_comment: "{{ email }}"

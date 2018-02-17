@@ -1,4 +1,9 @@
 ---
+- name: Install common packages
+  apt: pkg={{ item }} state=latest update_cache=yes cache_valid_time={{ aptcachetime }}
+  with_items:
+    - {{ add_packages }}
+
 - name: Removing applications
   apt: pkg={{ item }} purge=yes state=absent
   with_items:
@@ -31,3 +36,7 @@
   shell: xdg-user-dirs-update
   become: true
   become_user: "{{ ansible_env.USER }}"
+
+
+- name: Ensure that Aptitude repositories are up to date
+  apt: update_cache=yes cache_valid_time={{ aptcachetime }}

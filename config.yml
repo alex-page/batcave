@@ -3,16 +3,11 @@
   hosts: localhost
   vars_files:
     - vars/main.yml
-  user:
-    name: "{{ ansible_env.USER }}"
-    generate_ssh_key: yes
-    ssh_key_bits: 4096
-    ssh_key_file: .ssh/id_rsa
-    ssh_key_passphrase: "{{ ssh_passphrase }}"
-    ssh_key_comment: "{{ email }}"
   roles:
-    # Uninstall and reset ubuntu desktop
-    #- { role: desktop-cleanup, become: true }
+    # Add ssh key and gpg credentials to github account
+    - { role: ssh-key }
+    # Clean up the ubuntu desktop environment
+    - { role: desktop-cleanup, become: true }
     # Add ssh key and gpg credentials to github account
     # - { role: github, become: true }
     # Clone github projects

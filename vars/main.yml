@@ -81,7 +81,13 @@ github_projects:
     repo: alex-page/black-lion
 
 
-# desktop-cleanup - Packages to uninstall
+# desktop-cleanup
+
+# Packages to install
+add_packages:
+  - curl
+
+# Packages to uninstall
 remove_packages:
   - aisleriot
   - cheese
