@@ -4,13 +4,19 @@
   vars_files:
     - vars/main.yml
   roles:
+    # Uninstall and reset ubuntu desktop
     - { role: desktop-cleanup, become: true }
-    # https://github.com/geerlingguy/ansible-role-nodejs
-    - { role: nodejs, become: true }
-    # https://github.com/gantsign/ansible-role-visual-studio-code
-    - { role: visual-studio-code, become: true }
-    # Create ssh key, gpg with github token
-    - { role: github, become: true }
+
+
+    # Add ssh key
+    - { role: ssh-key, become: true }
+    # Add ssh key and gpg credentials to github account
+    # - { role: github, become: true }
     # Clone github projects
     # - { role: github-projects }
 
+
+    # Install nodejs
+    # - { role: nodejs, become: true }
+    # Install VSC
+    # - { role: visual-studio-code, become: true }

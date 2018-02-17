@@ -5,8 +5,11 @@ locale: "en_AU.UTF-8"
 timezone: "Australia/Sydney"
 
 
+# Personal information
+email: alex@alexpage.com.au
+
+
 # Github information, uses this to create ssh key and gpg credentials
-github_email: alex@alexpage.com.au
 github_username: alex-page
 # This is created with `ansible-vault encrypt_string yourtokenhere --ask-vault-pass`
 github_token: !vault |
