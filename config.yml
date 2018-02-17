@@ -9,5 +9,8 @@
     - { role: nodejs, become: true }
     # https://github.com/gantsign/ansible-role-visual-studio-code
     - { role: visual-studio-code, become: true }
-    - { role: github-projects }
+    # Create ssh key, gpg with github token
+    - { role: github, become: true }
+    # Clone github projects
+    # - { role: github-projects }
 

@@ -1,0 +1,5 @@
+---
+# https://unix.stackexchange.com/questions/136894/command-line-method-or-programmatically-add-ssh-key-to-github-com-user-account
+- name: Create ssh key
+
+# - name: Add ssh key to github account

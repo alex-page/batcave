@@ -1,5 +1,4 @@
 ---
-
 - name: Removing applications
   apt: pkg={{ item }} purge=yes state=absent
   with_items:
