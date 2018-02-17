@@ -1,3 +1,0 @@
----
-- name: Create ssh key
-  command: ssh-keygen -t rsa -f ~/.ssh/id_rsa -b 4096 -C "{{ email }}" -N "{{ ssh_passphrase }}"
