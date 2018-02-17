@@ -6,16 +6,12 @@
   roles:
     # Uninstall and reset ubuntu desktop
     - { role: desktop-cleanup, become: true }
-
-
     # Add ssh key
     - { role: ssh-key, become: true }
     # Add ssh key and gpg credentials to github account
     # - { role: github, become: true }
     # Clone github projects
     # - { role: github-projects }
-
-
     # Install nodejs
     # - { role: nodejs, become: true }
     # Install VSC

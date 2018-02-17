@@ -1,5 +1,3 @@
 ---
 - name: Create ssh key
-  command: ssh-keygen -t rsa -f ~/.ssh/id_rsa -b 4096 -C "{{ email }}"
-    args:
-      creates: ~/.ssh/id_rsa
+  command: ssh-keygen -t rsa -f ~/.ssh/id_rsa -b 4096 -C "{{ email }}" -N "{{ ssh_passphrase }}"
