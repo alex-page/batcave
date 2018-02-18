@@ -85,7 +85,9 @@ github_projects:
 
 # Packages to install
 add_packages:
-  - curl
+  - keychain  # gpg and ssh key management
+  - expect    # ssh add-key without prompts private key to keychain
+  - curl      # send public key data to github
 
 # Packages to uninstall
 remove_packages:

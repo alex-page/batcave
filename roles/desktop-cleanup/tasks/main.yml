@@ -9,10 +9,8 @@
   with_items:
     - "{{ remove_packages }}"
 
-
 - name: Removing amazon shortcut from launch bar
   file: path=/usr/share/applications/ubuntu-amazon-default.desktop force=yes state=absent
-
 
 - name: Disabling unity integrations
   command: "{{ item }}"
@@ -20,7 +18,6 @@
   become_user: "{{ ansible_env.USER }}"
   with_items:
     - gsettings set com.canonical.Unity.Lenses disabled-scopes "['more_suggestions-amazon.scope', 'more_suggestions-u1ms.scope', 'more_suggestions-populartracks.scope', 'music-musicstore.scope', 'more_suggestions-ebay.scope', 'more_suggestions-ubuntushop.scope', 'more_suggestions-skimlinks.scope']"
-
 
 - name: Removing user directories ( XDG )
   file: path="{{ ansible_env.HOME }}/{{ item }}" force=yes state=absent
@@ -31,12 +28,10 @@
     - Public
     - Templates
 
-
 - name : Running xdg-user-dirs-update
   shell: xdg-user-dirs-update
   become: true
   become_user: "{{ ansible_env.USER }}"
-
 
 - name: Ensure that Aptitude repositories are up to date
   apt: update_cache=yes cache_valid_time={{ aptcachetime }}
