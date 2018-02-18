@@ -7,7 +7,7 @@ timezone: "Australia/Sydney"
 
 # Dotfile configuration
 dotfiles_repo: "https://github.com/alex-page/dotfiles.git"
-dotfiles_repo_local_destination: "~/dotfiles"
+dotfiles_repo_local_destination: "~/.dotfiles"
 dotfiles_files:
   - .bash_profile
 

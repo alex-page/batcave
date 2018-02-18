@@ -1,0 +1,3 @@
+---
+- name: Reset the bash_profile after import
+  command: source ~/.bash_profile
