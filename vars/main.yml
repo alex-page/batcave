@@ -5,6 +5,13 @@ locale: "en_AU.UTF-8"
 timezone: "Australia/Sydney"
 
 
+# Dotfile configuration
+dotfiles_repo: "https://github.com/alex-page/dotfiles.git"
+dotfiles_repo_local_destination: "~/dotfiles"
+dotfiles_files:
+  - .bash_profile
+
+
 # Personal information
 email: alex@alexpage.com.au
 
