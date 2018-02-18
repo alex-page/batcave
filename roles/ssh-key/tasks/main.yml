@@ -13,7 +13,7 @@
     pkg: keychain
     state: latest
     update_cache: yes
-    cache_valid_time: {{ aptcachetime }}
+    cache_valid_time: "{{ aptcachetime }}"
 
 # https://superuser.com/questions/1003403/how-to-use-gpg-gen-key-in-a-script
 - name: Add GPG key for the user
@@ -43,7 +43,7 @@
     pkg: expect
     state: latest
     update_cache: yes
-    cache_valid_time: {{ aptcachetime }}
+    cache_valid_time: "{{ aptcachetime }}"
 
 # https://unix.stackexchange.com/questions/90853/how-can-i-run-ssh-add-automatically-without-password-prompt
 - name: Add private key to ssh-agent
