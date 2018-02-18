@@ -24,7 +24,7 @@
       # Do a commit here, so that we can later print "done" :-)
       %commit
       %echo End -> Generating a basic OpenPGP key
-    EOF
+EOF
 
     gpg --batch --gen-key gpgdetails
     rm ~/.gpgdetails
