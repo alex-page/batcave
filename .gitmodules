@@ -4,3 +4,6 @@
 [submodule "roles/nodejs"]
 	path = roles/nodejs
 	url = https://alex-page@github.com/geerlingguy/ansible-role-nodejs.git
+[submodule "roles/dotfiles"]
+	path = roles/dotfiles
+	url = https://alex-page@github.com/geerlingguy/ansible-role-dotfiles.git
