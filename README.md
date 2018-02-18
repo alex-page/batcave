@@ -13,14 +13,19 @@ wget -O- https://raw.githubusercontent.com/alex-page/batcave/master/init.sh | sh
 
 # Usage
 
-This configuration is built for myself. If you would like to use it make sure to change the variables in the [`vars/main.yml`](vars/main.yml) file to suit your needs.
+This configuration is built for myself. 
 
-When creating encrypted variables ( variables with `!vault` ) make sure to read the documentation on the ansible website for [`ansible-vault encrypt_string`](http://docs.ansible.com/ansible/2.4/vault.html#use-encrypt-string-to-create-encrypted-variables-to-embed-in-yaml).
+Please feel free to fork it and change the [variables ( vars/main.yml )](vars/main.yml) and [`tasks ( config.yml )`](config.yml) to suit your needs.
+
+This project uses github [personal access token](https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/) to automatically add ssh and gpg configuration to the ubuntu desktop environment and github account. You must provide an encrypted token with the permissions `admin:gpg_key` and `admin:public_key`.
+
+
+## How to encrypt variables
+Some variables are encrypted such as github [personal access token](https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/) and `ssh_passphrase`.
+
+Read the documentation on the ansible website for [`ansible-vault encrypt_string`](http://docs.ansible.com/ansible/2.4/vault.html#use-encrypt-string-to-create-encrypted-variables-to-embed-in-yaml) to learn more about creating encrypted variables. 
+
+The simple way of creating an encrypted string in ansible is:
 ```
-ansible-vault encrypt_string __your_encryptyed_string --ask-vault-pass
+ansible-vault encrypt_string __your_encryptyed_string__ --ask-vault-pass
 ```
-
-You can also enable and disable tasks in the [`config.yml`](config.yml) file.
-
-To use this you must create a [personal access token](https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/)  with the permissions that allow you to configure `admin:gpg_key` and `admin:public_key`.
-

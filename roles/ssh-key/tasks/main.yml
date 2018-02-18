@@ -5,5 +5,44 @@
     generate_ssh_key: yes
     ssh_key_bits: 4096
     ssh_key_file: .ssh/id_rsa
-    ssh_key_passphrase: "{{ ssh_passphrase }}"
+    ssh_key_passphrase: "{{ key_passphrase }}"
     ssh_key_comment: "{{ email }}"
+
+- name: Install keychain
+  apt:
+    pkg: keychain
+    state: latest
+    update_cache: yes
+    cache_valid_time: {{ aptcachetime }}
+
+# https://superuser.com/questions/1003403/how-to-use-gpg-gen-key-in-a-script
+- name: Add GPG key for the user
+  shell: |
+    cat > ~/.gpgdetails <<EOF
+      %echo Start -> Generating a basic OpenPGP key
+      Key-Type: RSA
+      Key-Length: 4096
+      Subkey-Type: RSA
+      Subkey-Length: 4096
+      Name-Email: "{{ email }}"
+      Expire-Date: 0
+      Passphrase: "{{ key_passphrase }}"
+      # Do a commit here, so that we can later print "done" :-)
+      %commit
+      %echo End -> Generating a basic OpenPGP key
+    EOF
+
+    gpg --batch --gen-key gpgdetails
+    rm ~/.gpgdetails
+
+- name: Start the ssh-agent
+  command: eval "$(ssh-agent -s)"
+
+# https://unix.stackexchange.com/questions/90853/how-can-i-run-ssh-add-automatically-without-password-prompt
+- name: Add private key to ssh-agent
+  shell: |
+    spawn ssh-add ~/.ssh/id_rsa
+    expect "Enter passphrase for ~/.ssh/id_rsa:"
+    send "{{ ssh_passphrase }}\n";
+    expect "Identity added: ~/.ssh/id_rsa (~/.ssh/id_rsa)"
+    interact
