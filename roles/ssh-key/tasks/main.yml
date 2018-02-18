@@ -29,10 +29,12 @@
     gpg --batch --gen-key gpgdetails
     rm ~/.gpgdetails
 
+# This requires keychain
 - name: Start the ssh-agent
   command: eval "$(ssh-agent -s)"
 
 
+# This requires expect
 # https://unix.stackexchange.com/questions/90853/how-can-i-run-ssh-add-automatically-without-password-prompt
 - name: Add private key to ssh-agent
   shell: |
