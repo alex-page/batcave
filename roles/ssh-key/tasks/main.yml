@@ -11,9 +11,6 @@
 
 # https://superuser.com/questions/1003403/how-to-use-gpg-gen-key-in-a-script
 - name: Create gpgdetails file
-  file:
-    path: ~/.gpgdetails
-    state: touch
   copy:
     dest: ~/.gpgdetails
     content: |
