@@ -6,7 +6,9 @@
   roles:
     # Clean up the ubuntu desktop environment, install packages, update packages
     - { role: desktop-cleanup, become: true }
-    # Add ssh key and gpg credentials to github account
+    # Create a gpg key
+    # - { role: gpg-key }
+    # Create a ssh key
     - { role: ssh-key }
     # Add ssh key and gpg credentials to github account
     # - { role: github, become: true }
