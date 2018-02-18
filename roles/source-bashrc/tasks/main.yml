@@ -1,3 +1,0 @@
----
-- name: Reset the bashrc after import
-  command: source ~/.bashrc

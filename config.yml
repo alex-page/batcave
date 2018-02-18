@@ -8,8 +8,6 @@
     - { role: desktop-cleanup, become: true }
     # Get dotfiles from github
     - { role: dotfiles }
-    # Source ~/.bashrc
-    - { role: source-bashrc }
     # Create a gpg key
     # - { role: gpg-key }
     # Create a ssh key

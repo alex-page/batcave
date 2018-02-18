@@ -28,7 +28,6 @@ key_passphrase: !vault |
 
 # Github information, uses this to create ssh key and gpg credentials
 github_username: alex-page
-# This is created with `ansible-vault encrypt_string yourtokenhere --ask-vault-pass`
 github_token: !vault |
   $ANSIBLE_VAULT;1.1;AES256
   31343238616364396462366666623531386530383366666436373038633836646466616431353138
