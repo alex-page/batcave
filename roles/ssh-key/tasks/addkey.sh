@@ -1,6 +1,6 @@
 #!/usr/bin/expect -f
-spawn source $1
+spawn source $SOURCE_DIR
 expect "Enter passphrase for ~/.ssh/id_rsa:"
-send $2;
+send $KEY;
 expect "Identity added: ~/.ssh/id_rsa (~/.ssh/id_rsa)"
 interact
