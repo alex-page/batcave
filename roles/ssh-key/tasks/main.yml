@@ -1,4 +1,12 @@
 ---
+
+- name: Install packages for ssh key management
+  apt: pkg={{ item }} state=latest update_cache=yes cache_valid_time={{ aptcachetime }}
+  with_items:
+    - keychain  # gpg and ssh key management
+    - expect    # ssh add-key without prompts private key to keychain
+    - curl      # send public key data to github
+
 - name: Creating SSH key for current user
   user:
     name: "{{ ansible_env.USER }}"

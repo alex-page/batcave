@@ -5,7 +5,7 @@
     - vars/main.yml
   roles:
     # Clean up the ubuntu desktop environment, install packages, update packages
-    - { role: desktop-cleanup, become: true }
+    # - { role: desktop-cleanup, become: true }
     # Get dotfiles from github
     - { role: dotfiles }
     # Create a gpg key
@@ -20,3 +20,5 @@
     # - { role: nodejs, become: true }
     # Install VSC
     # - { role: visual-studio-code, become: true }
+    # Update packages
+    # - { role: update-packages, become: true }
