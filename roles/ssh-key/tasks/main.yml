@@ -22,9 +22,6 @@
 # https://stackoverflow.com/questions/41379083/sourcing-a-file-before-executing-commands-in-ansible
 # https://unix.stackexchange.com/questions/90853/how-can-i-run-ssh-add-automatically-without-password-prompt
 - name: Start the ssh-agent and add the private key to ssh-agent
-  script: ../addkey.sh
+  script: ../addkey.sh "{{ key_passphrase }}" "{{ ansible_env.USER }}"
   become: true
-  no_log: true
-  environment:
-    KEY: "{{ key_passphrase }}"
-    USER: "{{ ansible_env.USER }}"
+  # no_log: true
