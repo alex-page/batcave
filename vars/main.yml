@@ -91,6 +91,12 @@ github_projects:
 
 # Packages to install
 add_packages:
+  # Packages for virtual box
+  - virtualbox-guest-utils
+  - virtualbox-guest-x11
+  - virtualbox-guest-dkms
+
+  # Additional packages
   - keychain  # gpg and ssh key management
   - expect    # ssh add-key without prompts private key to keychain
   - curl      # send public key data to github
