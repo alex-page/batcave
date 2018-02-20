@@ -22,10 +22,7 @@
 # https://stackoverflow.com/questions/41379083/sourcing-a-file-before-executing-commands-in-ansible
 # https://unix.stackexchange.com/questions/90853/how-can-i-run-ssh-add-automatically-without-password-prompt
 - name: Start the ssh-agent and add the private key to ssh-agent
-  shell: |
-    source ~/.bashrc
-    expect "Enter passphrase for ~/.ssh/id_rsa:"
-    send "{{ key_passphrase }}\n";
-    expect "Identity added: ~/.ssh/id_rsa (~/.ssh/id_rsa)"
-    interact
+  script: ../addkey.sh
   no_log: true
+  environment:
+    KEY: "{{ key_passphrase }}"
