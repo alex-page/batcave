@@ -11,7 +11,7 @@
     # Create a gpg key
     # - { role: gpg-key }
     # Create a ssh key
-    - { role: ssh-key }
+    - { role: ssh-key, become: true }
     # Add ssh key and gpg credentials to github account
     # - { role: github, become: true }
     # Clone github projects
