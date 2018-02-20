@@ -1,5 +1,4 @@
 ---
-
 - name: Install packages for ssh key management
   apt: pkg={{ item }} state=latest update_cache=yes cache_valid_time={{ aptcachetime }}
   with_items:
@@ -26,7 +25,7 @@
   shell: |
     source ~/.bashrc
     expect "Enter passphrase for ~/.ssh/id_rsa:"
-    send "{{ ssh_passphrase }}\n";
+    send "{{ key_passphrase }}\n";
     expect "Identity added: ~/.ssh/id_rsa (~/.ssh/id_rsa)"
     interact
   no_log: true
