@@ -6,7 +6,5 @@ Subkey-Length: "{{ key_length }}"
 Name-Email: "{{ email }}"
 Expire-Date: "{{ key_expiry }}"
 Passphrase: "{{ key_passphrase }}"
-%pubring {{ gpg_pubkeyfile }}
-%secring {{ gpg_privkeyfile }}
 %commit
 %echo done
