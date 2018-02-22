@@ -1,6 +1,10 @@
 ---
 - name: Install packages for ssh and gpg key management
-  apt: pkg={{ item }} state=latest update_cache=yes cache_valid_time={{ aptcachetime }}
+  apt:
+    pkg: "{{ item }}"
+    state: latest
+    update_cache: yes
+    cache_valid_time: "{{ aptcachetime }}"
   with_items:
     - keychain  # gpg and ssh key management
     - expect    # ssh add-key without prompts private key to keychain
@@ -59,7 +63,10 @@
 
 
 - name: Removing expect and rng-tools
-  apt: pkg={{ item }} purge=yes state=absent
+  apt:
+    pkg: "{{ item }}"
+    purge: yes
+    state: absent
   with_items:
     - expect
     - rng-tools
