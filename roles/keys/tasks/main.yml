@@ -34,7 +34,7 @@
 
 # Get the GPG ID and set it to the gpg_id variable
 - name: Get GPG key ID
-  shell: gpg --list-keys --with-colons | awk -F: \'/^pub:/ { print $5 }\'
+  shell: "gpg --list-keys --with-colons | awk -F: \"/^pub:/ { print $5 }\""
   register: gpg_id
 
 
