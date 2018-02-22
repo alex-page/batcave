@@ -4,7 +4,6 @@
   with_items:
     - keychain  # gpg and ssh key management
     - expect    # ssh add-key without prompts private key to keychain
-    - curl      # send public key data to github
   become: true
 
 
@@ -28,3 +27,9 @@
   environment:
     KEY: "{{ key_passphrase }}"
   no_log: true
+
+
+- name: Removing expect
+  apt: pkg={{ item }} purge=yes state=absent
+  with_items:
+    - expect

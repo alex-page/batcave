@@ -1,4 +1,12 @@
 ---
+# Install necessary tools for randomness
+- name: Ensure have enough randomness
+  apt: pkg={{ item }} state=latest update_cache=yes cache_valid_time={{ aptcachetime }}
+  with_items:
+    - rng-tools
+    - gpgv2
+  become: yes
+
 # https://superuser.com/questions/1003403/how-to-use-gpg-gen-key-in-a-script
 - name: Create gpgdetails file
   template:
@@ -10,3 +18,9 @@
 
 - name: Generate GPG key and remove gpgdetails
   shell: gpg --batch --gen-key ~/.gpgdetails && rm ~/.gpgdetails
+
+
+- name: Removing rng-tools
+  apt: pkg={{ item }} purge=yes state=absent
+  with_items:
+    - rng-tools
