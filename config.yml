@@ -7,7 +7,7 @@
     # Clean up the ubuntu desktop environment, install packages, update packages
     # - { role: desktop-cleanup, become: true }
     # Get dotfiles from github
-    - { role: dotfiles }
+    # - { role: dotfiles }
     # Create a gpg key
     # - { role: gpg-key }
     # Create a ssh key
