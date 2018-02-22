@@ -23,7 +23,8 @@
 # https://unix.stackexchange.com/questions/90853/how-can-i-run-ssh-add-automatically-without-password-prompt
 # https://stackoverflow.com/questions/3149367/how-to-get-expect-c-to-work-in-single-line-rather-than-script
 - name: Start the ssh-agent and add the private key to ssh-agent
-  script: expect -c "spawn keychain --eval id_rsa; sleep 5; expect \"Enter passphrase for ~/.ssh/id_rsa:\"; send $KEY"; expect \"Identity added: ~/.ssh/id_rsa (~/.ssh/id_rsa)\"; interact;"
+  shell: |
+    expect -c "spawn keychain --eval id_rsa; sleep 5; expect \"Enter passphrase for ~/.ssh/id_rsa:\"; send $KEY"; expect \"Identity added: ~/.ssh/id_rsa (~/.ssh/id_rsa)\"; interact;"
   environment:
     KEY: "{{ key_passphrase }}"
   # no_log: true
