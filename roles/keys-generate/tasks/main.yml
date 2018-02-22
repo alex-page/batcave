@@ -38,7 +38,7 @@
 
 # Get the GPG ID and set it to the gpg_id variable
 - name: Get GPG key ID
-  shell: "gpg --list-keys --with-colons | awk -F: \"/^pub:/ { print $5 }\""
+  shell: "gpg --list-keys --with-colons | awk -F: '/^pub:/ { print $5 }'"
   register: gpg_id
 
 
@@ -50,7 +50,7 @@
     expect -c "spawn keychain --eval id_rsa $GPG_ID; sleep 2; expect \"Enter passphrase for ~/.ssh/id_rsa:\"; send $KEY; expect \"Identity added: ~/.ssh/id_rsa (~/.ssh/id_rsa)\"; interact;"
   environment:
     KEY: "{{ key_passphrase }}"
-    GPG_ID: "{{ gpg_id }}"
+    GPG_ID: "{{ gpg_id.stdout }}"
   no_log: true
 
 
@@ -58,12 +58,12 @@
   shell: |
     git config --global user.email "{{ email }}"
     git config --global user.name "{{ name }}"
-    git config --global user.signingkey "{{ gpg_id }}"
+    git config --global user.signingkey "{{ gpg_id.stdout }}"
     git config --global commit.gpgsign true
 
 
 - name: Export the public key
-  shell: "gpg --armor --export {{ email }} > ~/.gnupg/{{ gpg_id }}-public.key"
+  shell: "gpg --armor --export {{ email }} > ~/.gnupg/{{ gpg_id.stdout }}-public.key"
 
 
 - name: Removing expect and rng-tools
