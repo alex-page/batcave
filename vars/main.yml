@@ -25,6 +25,12 @@ key_passphrase: !vault |
   6530623961376438310a363264303030666434643230653732653538386334656661376330356362
   62666332346331333935633164623164636535613830373061383033616662343035
 
+# Key length for GPG and SSH keys
+key_length: 4096
+
+# Number of days until GPG key expires
+key_expiry: 30
+
 
 # Github information, uses this to create ssh key and gpg credentials
 github_username: alex-page

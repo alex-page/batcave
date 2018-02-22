@@ -1,0 +1,12 @@
+%echo Generating a OpenPGP key
+Key-Type: RSA
+Key-Length: "{{ key_length }}"
+Subkey-Type: RSA
+Subkey-Length: "{{ key_length }}"
+Name-Email: "{{ email }}"
+Expire-Date: "{{ key_expiry }}"
+Passphrase: "{{ key_passphrase }}"
+%pubring {{ gpg_pubkeyfile }}
+%secring {{ gpg_privkeyfile }}
+%commit
+%echo done

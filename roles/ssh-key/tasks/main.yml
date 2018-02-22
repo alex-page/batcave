@@ -12,7 +12,7 @@
   user:
     name: "{{ ansible_env.USER }}"
     generate_ssh_key: yes
-    ssh_key_bits: 4096
+    ssh_key_bits: "{{ key_length }}"
     ssh_key_file: .ssh/id_rsa
     ssh_key_passphrase: "{{ key_passphrase }}"
     ssh_key_comment: "{{ email }}"
@@ -24,7 +24,7 @@
 # https://stackoverflow.com/questions/3149367/how-to-get-expect-c-to-work-in-single-line-rather-than-script
 - name: Start the ssh-agent and add the private key to ssh-agent
   shell: |
-    expect -c "spawn keychain --eval id_rsa; sleep 5; expect \"Enter passphrase for ~/.ssh/id_rsa:\"; send $KEY; expect \"Identity added: ~/.ssh/id_rsa (~/.ssh/id_rsa)\"; interact;"
+    expect -c "spawn keychain --eval id_rsa; sleep 2; expect \"Enter passphrase for ~/.ssh/id_rsa:\"; send $KEY; expect \"Identity added: ~/.ssh/id_rsa (~/.ssh/id_rsa)\"; interact;"
   environment:
     KEY: "{{ key_passphrase }}"
-  # no_log: true
+  no_log: true
