@@ -13,7 +13,7 @@ wget -O- https://raw.githubusercontent.com/alex-page/batcave/master/init.sh | sh
 
 # Usage
 
-This configuration is built for myself. 
+This configuration is built primarily for myself.
 
 Please feel free to fork it and change the [`variables ( vars/main.yml )`](vars/main.yml) and [`tasks ( config.yml )`](config.yml) to suit your needs.
 
