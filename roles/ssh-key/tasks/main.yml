@@ -24,7 +24,5 @@
 - name: Start the ssh-agent and add the private key to ssh-agent
   script: ./addkey.sh
   environment:
-    SOURCE_DIR: "/home/{{ ansible_env.USER }}/.bashrc"
-    KEY: "{{ key_passphrase }}\n"
-  become: true
+    KEY: "{{ key_passphrase.stdout }}\n"
   # no_log: true
