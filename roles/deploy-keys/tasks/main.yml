@@ -16,8 +16,7 @@
     url: https://api.github.com/user/gpg_keys?access_token={{ github_token }}
     method: POST
     body:
-      title: "{{ github_username }}@{{ ansible_hostname }}"
-      armored_public_key: "{{ lookup( 'file', '~/.gnupg/pubring.kbx' ) }}"
+      armored_public_key: "{{ lookup( 'file', '~/.gnupg/public.key' ) }}"
     body_format: json
     status_code: 201
 

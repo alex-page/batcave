@@ -54,6 +54,10 @@
   shell: git config --global commit.gpgsign true
 
 
+- name: Export the public key
+  shell: "gpg --armor --export {{ email }} > ~/.gnupg/public.key"
+
+
 - name: Removing expect and rng-tools
   apt: pkg={{ item }} purge=yes state=absent
   with_items:

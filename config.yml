@@ -7,9 +7,9 @@
     # Get dotfiles from github
     # - { role: dotfiles }
     # Create a ssh key and gpg key, add them to the keychain
-    - { role: keys }
+    - { role: generate-keys }
     # Add ssh key and gpg credentials to github account
-    - { role: github-keys }
+    - { role: deploy-keys }
     # Clone github projects
     # - { role: github-projects }
     # Install nodejs
