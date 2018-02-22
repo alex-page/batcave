@@ -24,4 +24,4 @@
 - name: Authorize SSH keys from Github
   authorized_key:
     key: "https://github.com/{{ github_username }}.keys"
-  user: "{{ ansible_env.USER }}""
+  user: "{{ ansible_env.USER }}"
