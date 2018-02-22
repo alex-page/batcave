@@ -6,10 +6,8 @@
   roles:
     # Get dotfiles from github
     # - { role: dotfiles }
-    # Create a gpg key
-    - { role: gpg-key }
-    # Create a ssh key
-    # - { role: ssh-key }
+    # Create a ssh key and gpg key, add them to the keychain
+    - { role: keys }
     # Add ssh key and gpg credentials to github account
     # - { role: github, become: true }
     # Clone github projects
