@@ -1,0 +1,27 @@
+---
+# https://unix.stackexchange.com/questions/136894/command-line-method-or-programmatically-add-ssh-key-to-github-com-user-account
+- name: Add ssh key to github account
+  uri:
+    url: https://api.github.com/user/keys?access_token={{ github_token }}
+    method: POST
+    body:
+      title: "{{ github_username }}@{{ ansible_hostname }}"
+      key: "{{ lookup('file', '~/.ssh/id_rsa.pub') }}"
+    body_format: json
+    status_code: 201
+
+
+- name: Add gpg key to github account
+  uri:
+    url: https://api.github.com/user/gpg_keys?access_token={{ github_token }}
+    method: POST
+    body:
+      title: "{{ github_username }}@{{ ansible_hostname }}"
+      armored_public_key: "{{ lookup( 'file', '~/.gnupg/pubring.kbx' ) }}"
+    body_format: json
+    status_code: 201
+
+
+- name: Authorize SSH keys from Github
+  authorized_key:
+    key: https://github.com/{{ github_username }}.keys

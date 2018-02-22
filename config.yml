@@ -9,7 +9,7 @@
     # Create a ssh key and gpg key, add them to the keychain
     - { role: keys }
     # Add ssh key and gpg credentials to github account
-    # - { role: github, become: true }
+    - { role: github-keys }
     # Clone github projects
     # - { role: github-projects }
     # Install nodejs
