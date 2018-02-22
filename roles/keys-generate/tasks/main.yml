@@ -54,12 +54,16 @@
   no_log: true
 
 
-- name: Enable GPG signing for all git commits
-  shell: git config --global commit.gpgsign true
+- name: Git configuration including GPG signing
+  shell: |
+    git config --global user.email "{{ email }}"
+    git config --global user.name "{{ name }}"
+    git config --global user.signingkey "{{ gpg_id }}"
+    git config --global commit.gpgsign true
 
 
 - name: Export the public key
-  shell: "gpg --armor --export {{ email }} > ~/.gnupg/public.key"
+  shell: "gpg --armor --export {{ email }} > ~/.gnupg/{{ gpg_id }}-public.key"
 
 
 - name: Removing expect and rng-tools

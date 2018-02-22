@@ -16,7 +16,7 @@
     url: "https://api.github.com/user/gpg_keys?access_token={{ github_token }}"
     method: POST
     body:
-      armored_public_key: "{{ lookup( 'file', '~/.gnupg/public.key' ) }}"
+      armored_public_key: "{{ lookup( 'file', '~/.gnupg/{{ gpg_id }}-public.key' ) }}"
     body_format: json
     status_code: 201
 

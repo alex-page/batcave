@@ -14,6 +14,7 @@ dotfiles_files:
 
 # Personal information
 email: alex@alexpage.com.au
+name: Alex Page
 
 
 # Key passphrase for GPG and SSH
