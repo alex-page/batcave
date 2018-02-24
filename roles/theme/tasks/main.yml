@@ -10,6 +10,10 @@
       location: "~/Pictures/{{ ansible_env.USER }}"
 
 
+- name: Resize the user image
+  shell: "convert ~/Pictures/{{ ansible_env.USER }} -resize 200x100 ~/Pictures/{{ ansible_env.USER }}"
+
+
 - name: Set the wallpaper
   shell: "gsettings set org.gnome.desktop.background picture-uri file:///home/{{ ansible_env.USER }}/Pictures/wallpaper"
 
