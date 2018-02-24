@@ -4,8 +4,8 @@
     url: {{ item }}
     dest: ~/theme
     with_items:
-      - {{ wallpaper }}
-      - {{ user_image }}
+      - "{{ wallpaper }}"
+      - "{{ user_image }}"
 
 
 - name: Set the wallpaper
