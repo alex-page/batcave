@@ -5,18 +5,18 @@
     dest: "{{ item.location }}"
   with_items:
     - download: "{{ wallpaper }}"
-      location: "~/theme/wallpaper.png"
+      location: "~/wallpaper.png"
     - download: "{{ user_image }}"
-      location: "~/theme/me.png"
+      location: "~/me.png"
 
 
 - name: Set the wallpaper
-  shell: "gsettings set org.gnome.desktop.background picture-uri file:///home/{{ ansible_env.USER }}/theme/{{ wallpaper_file }}"
+  shell: "gsettings set org.gnome.desktop.background picture-uri file:///home/{{ ansible_env.USER }}/theme/wallpaper.png"
 
 
 - name: Set the user image
   copy:
-    src: ~/theme/{{ userimage_file }}.png
+    src: ~/theme/me.png
     dest: /var/lib/AccountsService/icons/{{ ansible_env.USER }}.png
   become: true
 
