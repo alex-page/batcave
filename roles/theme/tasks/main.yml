@@ -1,11 +1,13 @@
 ---
 - name: Download the wallpaper image and user image
   get_url:
-    url: "{{ item }}"
-    dest: ~/theme
+    url: "{{ item.download }}"
+    dest: "{{ item.location }}"
   with_items:
-    - "{{ wallpaper }}"
-    - "{{ user_image }}"
+    - download: "{{ wallpaper }}"
+      location: "~/theme/wallpaper.png"
+    - download: "{{ user_image }}"
+      location: "~/theme/me.png"
 
 
 - name: Set the wallpaper
