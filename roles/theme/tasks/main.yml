@@ -1,7 +1,7 @@
 ---
 - name: Download the wallpaper image and user image
   get_url:
-    url: {{ item }}
+    url: "{{ item }}"
     dest: ~/theme
   with_items:
     - "{{ wallpaper }}"
