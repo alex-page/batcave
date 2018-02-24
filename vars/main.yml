@@ -18,10 +18,8 @@ name: Alex Page
 
 
 # Customisation
-wallpaper_file: wallhaven-293157.png
-userimage_file: 19199063
-wallpaper:      "https://wallpapers.wallhaven.cc/wallpapers/full/{{ wallpaper_file }}"
-user_image:     "https://avatars0.githubusercontent.com/u/{{ userimage_file }}"
+wallpaper:      "https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-293157.png"
+user_image:     "https://avatars0.githubusercontent.com/u/19199063"
 
 
 # Key passphrase for GPG and SSH
