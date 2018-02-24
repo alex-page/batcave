@@ -1,13 +1,20 @@
 ---
+# create a directory if it doesn't exist
+- name: Create theme directory
+  file:
+    path: ~/theme/
+    state: directory
+    mode: 0755
+
 - name: Download the wallpaper image and user image
   get_url:
     url: "{{ item.download }}"
     dest: "{{ item.location }}"
   with_items:
     - download: "{{ wallpaper }}"
-      location: "~/wallpaper.png"
+      location: "~/theme/wallpaper.png"
     - download: "{{ user_image }}"
-      location: "~/me.png"
+      location: "~/theme/{{ ansible_env.USER }}.png"
 
 
 - name: Set the wallpaper
@@ -16,7 +23,7 @@
 
 - name: Set the user image
   copy:
-    src: ~/theme/me.png
+    src: ~/theme/{{ ansible_env.USER }}.png
     dest: /var/lib/AccountsService/icons/{{ ansible_env.USER }}.png
   become: true
 
