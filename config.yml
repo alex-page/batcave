@@ -4,14 +4,16 @@
   vars_files:
     - vars/main.yml
   roles:
+    # Apply theme
+    - { role: theme }
     # Get dotfiles from github
     # - { role: dotfiles }
     # Create a ssh key and gpg key, add them to the keychain
-    - { role: keys-generate }
+    # - { role: keys-generate }
     # Add ssh key and gpg credentials to github account
-    - { role: keys-deploy }
+    # - { role: keys-deploy }
     # Clone github projects
-    - { role: github-projects }
+    # - { role: github-projects }
     # Install nodejs
     # - { role: nodejs, become: true }
     # Install VSC
