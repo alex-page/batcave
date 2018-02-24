@@ -17,6 +17,13 @@ email: alex@alexpage.com.au
 name: Alex Page
 
 
+# Customisation
+wallpaper_file: wallhaven-293157.png
+userimage_file: 19199063
+wallpaper:      "https://wallpapers.wallhaven.cc/wallpapers/full/{{ wallpaper_file }}"
+user_image:     "https://avatars0.githubusercontent.com/u/{{ userimage_file }}"
+
+
 # Key passphrase for GPG and SSH
 key_passphrase: !vault |
   $ANSIBLE_VAULT;1.1;AES256

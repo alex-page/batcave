@@ -1,0 +1,21 @@
+---
+- name: Download the wallpaper image and user image
+  get_url: {{}}
+    url: {{ items }}
+    dest: ~/theme
+    with_items:
+      - {{ wallpaper }}
+      - {{ user_image }}
+
+
+- name: Set the wallpaper
+  shell: "gsettings set org.gnome.desktop.background picture-uri file:///home/{{ ansible_env.USER }}/theme/{{ wallpaper_file }}"
+
+
+- name: Set the user image
+  copy:
+    src: ~/theme/{{ userimage_file }}.png
+    dest: /var/lib/AccountsService/icons/{{ ansible_env.USER }}.png
+  become: true
+
+
