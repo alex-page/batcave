@@ -1,4 +1,11 @@
 ---
+vars_prompt:
+  - name: "ssh_password"
+    prompt: "Please enter a secure SSH private key password:"
+  - name: "gpg_password"
+    prompt: "Please enter a secure GPG private key password:"
+
+
 - name: Install packages for ssh and gpg key management
   apt:
     pkg: "{{ item }}"
@@ -18,7 +25,7 @@
     generate_ssh_key: yes
     ssh_key_bits: "{{ key_length }}"
     ssh_key_file: .ssh/id_rsa
-    ssh_key_passphrase: "{{ key_passphrase }}"
+    ssh_key_passphrase: "{{ ssh_password }}"
     ssh_key_comment: "{{ email }}"
   no_log: true
 
@@ -49,7 +56,7 @@
   shell: |
     expect -c "spawn keychain --eval id_rsa $GPG_ID; sleep 2; expect \"Enter passphrase for ~/.ssh/id_rsa:\"; send $KEY; expect \"Identity added: ~/.ssh/id_rsa (~/.ssh/id_rsa)\"; interact;"
   environment:
-    KEY: "{{ key_passphrase }}"
+    KEY: "{{ gpg_password }}"
     GPG_ID: "{{ gpg_id.stdout }}"
   no_log: true
 
