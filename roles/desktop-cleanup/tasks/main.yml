@@ -45,4 +45,9 @@
   shell: xdg-user-dirs-update
   become: true
   become_user: "{{ ansible_env.USER }}"
+  
+- name: Ensure that Aptitude repositories are up to date
+  apt:
+    update_cache: yes
+    cache_valid_time: "{{ aptcachetime }}"
 
