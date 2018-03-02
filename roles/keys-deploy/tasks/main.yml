@@ -1,5 +1,5 @@
 ---
-vars_prompt:
+- pause:
   - name: "github_username"
     prompt: "What is your github username?"
   - name: "github_token"
