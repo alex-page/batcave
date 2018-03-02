@@ -1,10 +1,13 @@
 ---
-vars_prompt:
+- pause:
   - name: "ssh_password"
     prompt: "Please enter a secure SSH private key password:"
+    private: true
+
+- pause:
   - name: "gpg_password"
     prompt: "Please enter a secure GPG private key password:"
-
+    private: true
 
 - name: Install packages for ssh and gpg key management
   apt:
