@@ -3,18 +3,6 @@
   hosts: localhost
   vars_files:
     - vars/main.yml
-  vars_prompt: 
-  - name: "ssh_password"
-    prompt: "Please enter a secure SSH private key password:"
-    private: yes
-  - name: "gpg_password"
-    prompt: "Please enter a secure GPG private key password:"
-    private: yes
-  - name: "github_username"
-    prompt: "What is your github username?"
-  - name: "github_token"
-    prompt: "What is your github personal access token ( GPG and SSH )?"
-    private: yes
   roles:
     # Apply theme
     - { role: theme }
