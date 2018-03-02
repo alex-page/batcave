@@ -1,4 +1,15 @@
 ---
+- name: Prompt for github username
+  pause:
+    prompt: "What is your github username?"
+  register: github_username
+      
+- name: Prompt for github personal access token
+  pause:
+    prompt: "What is your github personal access token ( GPG and SSH )?"
+    private: yes
+  register: github_token
+
 - name: Install packages for ssh and gpg key management
   apt:
     pkg: "{{ item }}"
