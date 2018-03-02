@@ -1,21 +1,15 @@
 ---
 - name: Prompt for private ssh key password
-  hosts: localhost
-  tasks:
-    - name: Prompt
-      pause:
-        prompt: "Please enter a secure SSH private key password:"
-        private: yes
-      register: ssh_password
+  pause:
+    prompt: "Please enter a secure SSH private key password:"
+    private: yes
+  register: ssh_password
       
 - name: Prompt for private gpg key password
-  hosts: localhost
-  tasks:
-    - name: Prompt
-      pause:
-        prompt: "Please enter a secure GPG private key password:"
-        private: yes
-      register: gpg_password
+  pause:
+    prompt: "Please enter a secure GPG private key password:"
+    private: yes
+  register: gpg_password
 
 # https://unix.stackexchange.com/questions/136894/command-line-method-or-programmatically-add-ssh-key-to-github-com-user-account
 - name: Add ssh key to github account
