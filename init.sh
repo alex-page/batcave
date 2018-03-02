@@ -1,6 +1,7 @@
 #!/bin/sh
 
 # Install required packages
+sudo apt-get update --fix-missing;
 sudo apt-get install -y build-essential git aptitude python-pip python-dev;
 
 # Install ansible with pip
