@@ -5,6 +5,6 @@ Subkey-Type: RSA
 Subkey-Length: {{ key_length }}
 Name-Email: {{ email }}
 Expire-Date: {{ key_expiry }}
-Passphrase: {{ key_passphrase }}
+Passphrase: {{ gpg_password }}
 %commit
 %echo done
