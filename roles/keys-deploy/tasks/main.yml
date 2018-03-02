@@ -1,4 +1,12 @@
 ---
+vars_prompt:
+  - name: "github_username"
+    prompt: "What is your github username?"
+  - name: "github_token"
+    prompt: "What is your github personal access token ( GPG and SSH )?"
+    private: yes
+
+
 # https://unix.stackexchange.com/questions/136894/command-line-method-or-programmatically-add-ssh-key-to-github-com-user-account
 - name: Add ssh key to github account
   uri:
