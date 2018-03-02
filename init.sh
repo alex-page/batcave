@@ -1,13 +1,10 @@
 #!/bin/sh
 
-# Update all the packages
-sudo apt-get update;
-
 # Install required packages
 sudo apt-get install -y build-essential git aptitude python-pip python-dev;
 
 # Install ansible with pip
-sudo pip install ansible cryptography;
+sudo -H pip install ansible cryptography;
 
 # Clone the repositry and the sub modules and go into the file
 git clone https://github.com/alex-page/batcave.git;
