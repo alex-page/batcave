@@ -3,8 +3,6 @@
   - name: "ssh_password"
     prompt: "Please enter a secure SSH private key password:"
     private: true
-
-- pause:
   - name: "gpg_password"
     prompt: "Please enter a secure GPG private key password:"
     private: true
