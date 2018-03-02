@@ -13,4 +13,4 @@ cd batcave;
 git submodule update --init --recursive;
 
 # Run the ansible playbook
-ansible-playbook config.yml --ask-become-pass --ask-vault-pass;
+ansible-playbook config.yml --ask-become-pass;
