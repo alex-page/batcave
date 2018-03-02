@@ -1,6 +1,6 @@
-# Batcave
+# 🦇 Batcave
 
-> 🦇 Automated set up of ubuntu desktop for a development environment
+> Automated set up of ubuntu desktop for a development environment
 
 
 # Get started
