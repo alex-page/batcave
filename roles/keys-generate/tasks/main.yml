@@ -1,15 +1,16 @@
 ---
-- name: Prompt for private ssh key password
+- name: Please enter a secure SSH private key password
   pause:
     prompt: "Please enter a secure SSH private key password"
-    private: yes
   register: ssh_password
+  no_log: true
+
       
-- name: Prompt for private gpg key password
+- name: Please enter a secure GPG private key password
   pause:
     prompt: "Please enter a secure GPG private key password"
-    private: yes
   register: gpg_password
+  no_log: true
 
 - name: Install packages for ssh and gpg key management
   apt:
