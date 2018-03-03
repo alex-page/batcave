@@ -1,13 +1,13 @@
 ---
 - name: Prompt for private ssh key password
   pause:
-    prompt: "Please enter a secure SSH private key password:"
+    prompt: "Please enter a secure SSH private key password"
     private: yes
   register: ssh_password
       
 - name: Prompt for private gpg key password
   pause:
-    prompt: "Please enter a secure GPG private key password:"
+    prompt: "Please enter a secure GPG private key password"
     private: yes
   register: gpg_password
 
