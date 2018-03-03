@@ -1,12 +1,12 @@
 ---
 - name: Prompt for github username
   pause:
-    prompt: "What is your github username?"
+    prompt: "What is your github username"
   register: github_username
       
 - name: Prompt for github personal access token
   pause:
-    prompt: "What is your github personal access token ( GPG and SSH )?"
+    prompt: "What is your github personal access token ( GPG and SSH )"
     private: yes
   register: github_token
 
