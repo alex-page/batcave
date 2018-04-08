@@ -18,6 +18,10 @@
   shell: "gsettings set org.gnome.desktop.background picture-uri file:///home/{{ ansible_env.USER }}/Pictures/wallpaper"
 
 
+## Add custom font families
+- name: Creates .fonts directory
+  file: path=~/.fonts state=directory
+
 - name: Download SF Mono font family
   get_url:
     url: https://github.com/ZulwiyozaPutra/SF-Mono-Font/archive/master.zip
