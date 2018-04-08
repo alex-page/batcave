@@ -44,16 +44,17 @@ users:
       - dbaeumer.vscode-eslint
     visual_studio_code_settings: {
       "git.autofetch": true,
+      "git.autoRepositoryDetection": false
       "workbench.colorTheme": "Ayu Mirage"
-      "window.zoomLevel": 0,
-      "editor.fontSize": 16,
-      "editor.tabSize": 2,
-      "editor.rulers": [ 160 ],
-      "editor.renderWhitespace": "all",
-      "editor.insertSpaces": false,
-      "editor.detectIndentation": false,
-      "editor.fontFamily": "SF Mono",
-      "editor.fontWeight": "300",
+      "window.zoomLevel": 0
+      "editor.fontSize": 16
+      "editor.tabSize": 2
+      "editor.rulers": [ 120 ]
+      "editor.renderWhitespace": "all"
+      "editor.insertSpaces": false
+      "editor.detectIndentation": false
+      "editor.fontFamily": "SF Mono"
+      "editor.fontWeight": "300"
       "files.exclude": {
         "**/node_modules": true
       },
