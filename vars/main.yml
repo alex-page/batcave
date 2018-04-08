@@ -31,9 +31,8 @@ key_expiry: 30
 
 # nodejs - Node js version and packages to install globally
 nodejs_version: "9.x"
-#nodejs_npm_global_packages:
-#  - name: browsersync
-
+nodejs_npm_global_packages:
+ - name: eslint
 
 # visual-studio-code - Visual studio code packages and preferences
 users:
@@ -41,17 +40,19 @@ users:
     visual_studio_code_extensions:
       - EditorConfig.editorconfig
       - PKief.material-icon-theme
-      - zhuangtongfa.material-theme
+      - teabyii.ayu
+      - dbaeumer.vscode-eslint
     visual_studio_code_settings: {
+      "git.autofetch": true,
+      "workbench.colorTheme": "Ayu Mirage"
       "window.zoomLevel": 0,
-      "workbench.colorTheme": "One Dark Pro",
       "editor.fontSize": 16,
       "editor.tabSize": 2,
       "editor.rulers": [ 160 ],
       "editor.renderWhitespace": "all",
       "editor.insertSpaces": false,
       "editor.detectIndentation": false,
-      "editor.fontFamily": "Ubuntu Mono",
+      "editor.fontFamily": "SF Mono",
       "editor.fontWeight": "300",
       "files.exclude": {
         "**/node_modules": true
