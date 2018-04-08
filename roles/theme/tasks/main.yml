@@ -18,13 +18,17 @@
   shell: "gsettings set org.gnome.desktop.background picture-uri file:///home/{{ ansible_env.USER }}/Pictures/wallpaper"
 
 
-- name: Download and install fonts
+- name: Download font families
   get_url:
     url: https://github.com/ZulwiyozaPutra/SF-Mono-Font/archive/master.zip
     dest: ~/
+    
+- name: Unzip font families
   unarchive:
     src:  ~/master.zip
     dest: ~/.fonts
+
+- name: Refresh font cache
   shell: fc-cache -f -v
 
 
