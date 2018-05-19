@@ -8,7 +8,7 @@
 Once ubuntu desktop is installed open the terminal and run:
 
 ```
-wget -O- https://raw.githubusercontent.com/alex-page/batcave/master/init.sh | bash
+wget -O - https://raw.githubusercontent.com/alex-page/batcave/master/init.sh | bash
 ```
 
 
