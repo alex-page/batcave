@@ -1,8 +1,26 @@
 ---
 - name: Batcave development environment
   hosts: localhost
+  
   vars_files:
     - vars/main.yml
+    
+  vars_prompt:
+  - name: "github_username"
+    prompt: "What is your github username"
+    private: no
+  - name: "github_token"
+    prompt: "What is your github personal access token ( GPG and SSH )"
+    private: yes
+  - name: "ssh_password"
+    prompt: "Please enter a secure SSH private key password"
+    private: yes
+    confirm: yes
+  - name: "gpg_password"
+    prompt: "Please enter a secure GPG private key password"
+    private: yes
+    confirm: yes
+    
   roles:
     # Apply theme
     - { role: theme }
