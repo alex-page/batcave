@@ -1,14 +1,4 @@
 ---
-- name: Prompt for github username
-  pause:
-    prompt: "What is your github username"
-  register: github_username
-      
-- name: Prompt for github personal access token
-  pause:
-    prompt: "What is your github personal access token ( GPG and SSH )"
-  register: github_token
-
 # https://unix.stackexchange.com/questions/136894/command-line-method-or-programmatically-add-ssh-key-to-github-com-user-account
 - name: Add ssh key to github account
   uri:
