@@ -1,4 +1,4 @@
-#! /bin/bash
+#!/usr/bin/env bash
 
 # Install required packages
 sudo apt-get update --fix-missing;
