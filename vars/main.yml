@@ -73,7 +73,7 @@ github_projects:
   - dest: "{{ ansible_env.HOME }}{{ project_folder_name }}/rainbow"
     repo: alex-page/rainbow
   - dest: "{{ ansible_env.HOME }}{{ project_folder_name }}/alexpage"
-    repo: alex-page/alex-page.github.io
+    repo: alex-page/alex-page
   - dest: "{{ ansible_env.HOME }}{{ project_folder_name }}/a11ycolor"
     repo: alex-page/a11ycolor
   - dest: "{{ ansible_env.HOME }}{{ project_folder_name }}/black-lion"
