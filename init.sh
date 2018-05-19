@@ -13,10 +13,10 @@ cd batcave;
 git submodule update --init --recursive;
 
 # Prompt the user for their information
-read -p 'What is your github username?: ' github_username;
-read -sp 'What is your github personal access token ( GPG and SSH )?: ' github_token;
-read -sp 'Please enter a secure SSH private key password?: ' ssh_password;
-read -sp 'Please enter a secure GPG private key password?: ' gpg_password;
+read -p $'What is your github username?:\n' github_username;
+read -sp $'\n\nWhat is your github personal access token ( GPG and SSH )?:\n' github_token;
+read -sp $'\n\nPlease enter a secure SSH private key password?:\n' ssh_password;
+read -sp $'\n\nPlease enter a secure GPG private key password?:\n' gpg_password;
 
 # Start the ansible task
 ansible-playbook ./config.yml --ask-become-pass -e "github_username=$github_username github_token=$github_token ssh_password=$ssh_password gpg_password=$gpg_password";
