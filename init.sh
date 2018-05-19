@@ -11,3 +11,6 @@ sudo -H pip install ansible cryptography;
 git clone https://github.com/alex-page/batcave.git;
 cd batcave;
 git submodule update --init --recursive;
+
+# Start the ansible task
+ansible-playbook batcave/config.yml --ask-become-pass;
