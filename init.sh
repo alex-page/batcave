@@ -1,4 +1,4 @@
-#!/bin/sh
+#! /bin/bash
 
 # Install required packages
 sudo apt-get update --fix-missing;
