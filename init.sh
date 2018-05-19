@@ -13,4 +13,4 @@ cd batcave;
 git submodule update --init --recursive;
 
 # Start the ansible task
-ansible-playbook batcave/config.yml --ask-become-pass;
+ansible-playbook config.yml --ask-become-pass;
