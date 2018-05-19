@@ -20,6 +20,3 @@ read -sp $'\n\nPlease enter a secure GPG private key password?:\n' gpg_password;
 
 # Start the ansible task
 ansible-playbook ./config.yml --ask-become-pass -e "github_username=$github_username github_token=$github_token ssh_password=$ssh_password gpg_password=$gpg_password";
-
-# Unset the variables
-unset github_username github_token ssh_password gpg_password;
