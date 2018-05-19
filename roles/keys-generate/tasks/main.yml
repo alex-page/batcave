@@ -1,17 +1,4 @@
 ---
-- name: Please enter a secure SSH private key password
-  pause:
-    prompt: "Please enter a secure SSH private key password"
-  register: ssh_password
-  no_log: true
-
-      
-- name: Please enter a secure GPG private key password
-  pause:
-    prompt: "Please enter a secure GPG private key password"
-  register: gpg_password
-  no_log: true
-
 - name: Install packages for ssh and gpg key management
   apt:
     pkg: "{{ item }}"
