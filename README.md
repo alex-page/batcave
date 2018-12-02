@@ -5,12 +5,68 @@
 
 # Get started
 
-Once ubuntu desktop is installed open the terminal and run:
+Start with a fresh install of ubuntu desktop 18.04.
 
+Once installed open terminal and run:
 ```
 bash -c "$( wget -O - https://raw.githubusercontent.com/alex-page/batcave/master/init.sh )"
 ```
 
+This runs the `init.sh` script that installs dependencies of ansible. It will ask for your github account username and SSH and GPG keys. It uses this information for setting up your public SSH and GPG keys, and cloing repositories. Once the dependencies are installed it runs ansible with the `config.yml`.
+
+This runs through the following tasks:
+
+**Theme**
+
+- Downloads and changes the wallpaper
+- Install custom font families
+
+
+**Dotfiles**
+
+- Fetches dotfiles from a github repository
+
+
+**Generate SSH and GPG key**
+
+- Generates SSH and GPG keys
+- Adds them to the local keychain
+- Starts SSH agent and sets up git
+
+
+**Add SSH and GPG credentials**
+
+- Adds the public keys generated to your github account
+
+
+**Github projects**
+
+- Clones repositories from github to a location
+
+
+**Install nodejs**
+
+- Installs the latest version of node js
+
+
+**Install visual studio code**
+
+- Installs the latest version of visual studio code
+- Installs any extensions
+
+
+**Clean up ubuntu**
+
+- Uninstall unecessary programs on ubuntu
+
+
+# To do
+
+The existing tasks already need some minor improvements. In the future I would also like to:
+
+- Change the user image
+- Install node version manager instead of node
+- Theme the terminal
 
 
 # Usage
