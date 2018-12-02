@@ -1,24 +1,24 @@
 ---
 - name: Batcave development environment
   hosts: localhost
-  
+
   vars_files:
     - vars/main.yml
-    
+
   roles:
     # Apply theme
     - { role: theme }
-    # Get dotfiles from github
-    - { role: dotfiles }
-    # Create a ssh key and gpg key, add them to the keychain
-    - { role: keys-generate }
-    # Add ssh key and gpg credentials to github account
-    - { role: keys-deploy }
-    # Clone github projects
-    - { role: github-projects }
-    # Install nodejs
-    - { role: nodejs, become: true }
-    # Install VSC
-    - { role: visual-studio-code, become: true }
-    # Clean up the ubuntu desktop environment, install packages, update packages
-    - { role: desktop-cleanup, become: true }
+    # # Get dotfiles from github
+    # - { role: dotfiles }
+    # # Create a ssh key and gpg key, add them to the keychain
+    # - { role: keys-generate }
+    # # Add ssh key and gpg credentials to github account
+    # - { role: keys-deploy }
+    # # Clone github projects
+    # - { role: github-projects }
+    # # Install nodejs
+    # - { role: nodejs, become: true }
+    # # Install VSC
+    # - { role: visual-studio-code, become: true }
+    # # Clean up the ubuntu desktop environment, install packages, update packages
+    # - { role: desktop-cleanup, become: true }
