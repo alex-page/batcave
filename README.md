@@ -64,9 +64,9 @@ This runs through the following tasks:
 
 The existing tasks already need some minor improvements. In the future I would also like to:
 
+- Theme the terminal
 - Change the user image
 - Install node version manager instead of node
-- Theme the terminal
 
 
 # Usage
